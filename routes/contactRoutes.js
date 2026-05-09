@@ -3,5 +3,5 @@ import { createContact } from "../controllers/contactController.js";
 
 const router = express.Router();
 
-router.post("/api/contacts", createContact);
+router.post("/create", createContact);
 export default router;
