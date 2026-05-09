@@ -4,6 +4,9 @@ import bodyParser from "body-parser";
 
 dotenv.config();
 
+import connectDB from "./config/db.js";
+connectDB();
+
 const app = express();
 
 app.get("/", (req, res) => {
