@@ -28,6 +28,10 @@ const contactSchema = new mongoose.Schema(
       required: true,
       trim: true
     },
+    status: {
+    type: String,
+    default: "active"
+     },
     createdAt: {
       type: Date,
       default: Date.now
