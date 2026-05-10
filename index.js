@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 connectDB();
 
 
-app.use("/api/contacts", contactRoutes);
+app.use("/contacts", contactRoutes);
 
 
 app.get("/", (req, res) => {
