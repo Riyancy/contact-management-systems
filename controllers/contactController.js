@@ -37,3 +37,33 @@ export const getAllContacts = async (req, res) => {
     });
   }
 };
+
+export const updateContact = async (req, res) => {
+  try {
+    const updatedContact = await Contact.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true } 
+    );
+
+    if (!updatedContact) {
+      return res.status(404).json({
+        success: false,
+        message: "Contact not found"
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Contact updated successfully",
+      data: updatedContact
+    });
+
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Failed to update contact",
+      error: error.message
+    });
+  }
+};
